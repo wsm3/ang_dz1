@@ -1,0 +1,19 @@
+<div class="village">
+  <h3>Cities list</h3>
+  <span class="line"> </span>
+  <div class="activity_box">
+    <div class="scrollbar" id="style-2">
+      <div class="activity-row" *ngFor="let city of listcs; let i = index" (click)="selectCity(city,i)" >
+        <div class="activity-desc">
+          <h5 [class.active]="selectedIndex === i">{{ city.name }}</h5>
+          <p>Sed perspiciatis</p>
+          <h6>Tel:+1285 968 685</h6>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

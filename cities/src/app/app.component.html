@@ -1,0 +1,75 @@
+<h1>Cities info Widget</h1>
+<div class="element">
+  <div class="element-left">
+    <div class="element-bg-img"><img [src]="activeCity?.img" alt="" class="img-responsive"> </div>
+    <div class="element-left-bottom">
+      <div class="ele-strip">
+        <ul>
+          <li><a href="#">Hotel</a></li>
+          <li><a href="#">Fishing</a></li>
+          <li><a href="#">Tours</a></li>
+          <li class="anc-bor"><a href="#">Weather</a></li>
+        </ul>
+      </div>
+      <app-mainlist [listcs]="listCities" (activeCity)="setActiveCity($event)"></app-mainlist>
+    </div>
+  </div>
+  <div class="element-right">
+
+        <!--    <ng-content *ngTemplateOutlet="weather_widget"> </ng-content>-->
+        <span #ww_content> </span>
+        <span #iw_content> </span>
+
+  </div>
+  <div class="clear"> </div>
+</div>
+<div class="copy-right">
+  <p>© 2015 Hot Weather Widget. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ng-template #weather_widget let-weather_value="weather_value">
+  <div class="temperatur" #ww_content>
+    <h5>Et harum quidem</h5>
+    <span class="w-line"> </span>
+
+    <h2>{{ weather_value}}<sup class="degree">°</sup></h2>
+    <h6>Water 20<sup class="degree">°</sup></h6>
+  </div>
+</ng-template>
+
+
+<ng-template #info_widget let-img="img" let-area="area" let-population="population">
+  <div class="teddy-bear">
+    <div class="teddy-text">
+      <h4>Nam libero voluptatem</h4>
+      <span class="w-line"> </span>
+      <img src="{{ img }}" alt=""  class="img-responsive">
+    </div>
+    <div class="teddy-follow">
+      <ul>
+        <li class="folw-h">
+          <h3>{{ area | number}}</h3>
+          <p>Area</p>
+        </li>
+        <li>
+          <h3>{{ population | number}}</h3>
+          <p>Population</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
