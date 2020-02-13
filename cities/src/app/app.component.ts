@@ -13,8 +13,7 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 
-import {CitiesData} from './shared/cities-datas';   //TODO: Use Services
-import {City} from './shared/cities-datas';         //TODO: Use Services
+import {City} from './shared/cities-datas';
 
 @Component({
   selector: 'app-root',
@@ -22,31 +21,20 @@ import {City} from './shared/cities-datas';         //TODO: Use Services
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent implements OnInit, AfterContentInit, AfterViewInit {
-
-  public CIN = new CitiesData();                       //TODO: Use Services
-
+export class AppComponent implements OnInit {
 
   public activeCity: City;
-  public listCities: City[];
-  public weather_value:string ;
-  public info:Object;
+  public filter:string;
 
   ngOnInit() {
-    console.log(this.CIN.getAllData());
-    this.listCities = this.CIN.getAllData();
+   // this.Cities$.subscribe()
   }
 
   public setActiveCity(c: City) {
     this.activeCity = c;
-    this.weather_value = this.activeCity.weather;
-    this.info = {
-      img : this.activeCity.img,
-      area : this.activeCity.area,
-      population: this.activeCity.population
-    };
   }
 
-  ngAfterContentInit(): void {}
-  ngAfterViewInit(): void {}
+  public setFilter(filter:string) {
+    this.filter = (filter == 'ALL') ? '' : filter ;
+  }
 }

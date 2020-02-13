@@ -1,3 +1,4 @@
+import {of} from "rxjs";
 
 export interface City {
   name        :string;
@@ -9,9 +10,7 @@ export interface City {
 }
 
 
-export class CitiesData {
-  // @ts-ignore
-  private Cities: City[] = [
+export const SourceData: City[] = [
     {
       name:'NewYork',
       weather: '10',
@@ -54,13 +53,13 @@ export class CitiesData {
     }
   ];
 
-  constructor() {}
+  // public getAllData = (): City[] => this.Cities;
+  //
+  // public getDataByName = (name:string) => this.getAllData().filter(function (city) {return city.name === name;});
 
-  public getAllData = (): City[] => this.Cities;
 
-  public getDataByName = (name:string) => this.getAllData().filter(function (city) {return city.name === name;});
+export const Cities$ = of(SourceData)
 
-}
 
 
 

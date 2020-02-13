@@ -1,19 +1,21 @@
-<div class="teddy-bear">
+<span *ngIf="activeCity?.img">
+  <div class="teddy-bear">
     <div class="teddy-text">
       <h4>Nam libero voluptatem</h4>
       <span class="w-line"> </span>
-      <img src="{{ info.img }}" alt=""  class="img-responsive">
+      <img src="{{ activeCity.img }}" alt="" class="img-responsive">
     </div>
     <div class="teddy-follow">
       <ul>
         <li class="folw-h">
-          <h3>{{ info.area | number}}</h3>
+          <h3>{{ activeCity.area | number}}</h3>
           <p>Area</p>
         </li>
         <li>
-          <h3>{{ info.population | number }}</h3>
+          <h3>{{ activeCity.population | number }}</h3>
           <p>Population</p>
         </li>
       </ul>
     </div>
-</div>
+  </div>
+</span>

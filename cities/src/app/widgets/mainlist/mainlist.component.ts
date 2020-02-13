@@ -1,7 +1,8 @@
 import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 
-import { City } from '../../shared/cities-datas';         //TODO: Use Services
+import {Cities$} from '../../shared/cities-datas';
+import {City} from '../../shared/cities-datas';
 
 @Component({
   selector: 'app-mainlist',
@@ -15,8 +16,9 @@ export class MainlistComponent implements OnInit {
   public activeCity:EventEmitter<City> = new EventEmitter<City>();
 
   @Input()
-  public listcs: City[];
+  public filter:string;
 
+  public Cities$ = Cities$;
   public selectedIndex: number = null;
 
   ngOnInit() {}

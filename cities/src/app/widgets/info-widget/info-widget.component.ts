@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {City} from "../../shared/cities-datas";
 
 @Component({
   selector: 'app-info-widget',
@@ -6,6 +7,6 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./info-widget.component.css']
 })
 export class InfoWidgetComponent implements OnInit {
-  @Input('info') info: Object;
+  @Input('activeCity') activeCity: City;
   ngOnInit(): void {}
 }

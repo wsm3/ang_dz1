@@ -5,18 +5,15 @@
     <div class="element-left-bottom">
       <div class="ele-strip">
         <ul>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Fishing</a></li>
-          <li><a href="#">Tours</a></li>
-          <li class="anc-bor"><a href="#">Weather</a></li>
+          <li *ngFor="let c of ['USA','RUSSIA','ITALY','SPAIN','ALL']"><a (click)="setFilter($event.target.innerText)" href="#">{{c}}</a></li>
         </ul>
       </div>
-      <app-mainlist [listcs]="listCities" (activeCity)="setActiveCity($event)"></app-mainlist>
+     <app-mainlist [filter]="filter" (activeCity)="setActiveCity($event)"></app-mainlist>
     </div>
   </div>
   <div class="element-right">
-    <app-weather-widget [weather_value]="weather_value"></app-weather-widget>
-    <app-info-widget [info]="info"></app-info-widget>
+    <app-weather-widget [activeCity]= "activeCity"></app-weather-widget>
+    <app-info-widget [activeCity]="activeCity"></app-info-widget>
   </div>
   <div class="clear"></div>
 </div>

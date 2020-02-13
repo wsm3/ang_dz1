@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { MainlistComponent } from './widgets/mainlist/mainlist.component';
 import { WeatherWidgetComponent } from './widgets/weather-widget/weather-widget.component';
 import { InfoWidgetComponent } from './widgets/info-widget/info-widget.component';
-
-
+import { FilterlistPipe } from './widgets/mainlist/filterlist.pipe';
 
 
 
@@ -17,6 +16,7 @@ import { InfoWidgetComponent } from './widgets/info-widget/info-widget.component
     MainlistComponent,
     WeatherWidgetComponent,
     InfoWidgetComponent,
+    FilterlistPipe,
   ],
   imports: [
     BrowserModule,
