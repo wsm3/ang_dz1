@@ -44,7 +44,7 @@ a:hover {
   -o-transition: 0.5s all;
 }
 .active {
-  text-decoration: underline;
+  border-bottom: 1px #fd7b87 solid;
 }
 /*--header start here--*/
 h1 {

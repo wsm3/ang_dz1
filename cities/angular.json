@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cities"
+    }
+  },
+  "defaultProject": "cities",
+  "cli": {
+    "analytics": false
+  }
 }
